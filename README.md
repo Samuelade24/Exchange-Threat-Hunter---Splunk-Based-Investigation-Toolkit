@@ -4,20 +4,19 @@ Splunk investigation report, enhanced with threat modeling, compliance mapping, 
 
 ## 🔍 SOC Investigation: Exchange Exploits & Lateral Movement
 
-```mermaid
-graph TD
-    A[Initial Compromise] --> B{Exchange Exploit}
-    B --> C[Web Shell]
-    B --> D[ProxyShell]
-    C --> E[Persistence]
-    D --> E
-    E --> F[[Lateral Movement]]
-    F --> G[Credential Dumping]
-    F --> H[RDP Connections]
-    G --> I[Domain Escalation]
-    H --> I
-    I --> J[Data Exfiltration]
-    J --> K[Regulatory Breach]
+### Option 3: Table Representation
+```markdown
+## Attack Flow Table
+
+| Stage | Components | 
+|-------|------------|
+| 1. Initial Access | Phishing, Exploit Public-Facing App |
+| 2. Execution | Web Shell, ProxyShell |
+| 3. Persistence | Scheduled Tasks, Service Installation |
+| 4. Lateral Movement | RDP, WMI, PSExec |
+| 5. Privilege Escalation | Credential Dumping |
+| 6. Exfiltration | DNS Tunneling, Cloud Storage |
+| 7. Impact | Data Breach, Regulatory Fines |
 
 📋 Executive Summary
 Investigation Scope: Exchange Server Exploits → Data Exfiltration
